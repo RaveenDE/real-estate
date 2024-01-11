@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 
-mongoose.connect("mongodb+srv://raveen:1234@cluster0.hy2vc2c.mongodb.net/?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://@cluster0.hy2vc2c.mongodb.net/?retryWrites=true&w=majority")
 .then(()=>{
     console.log('Connected to MONGODB!');
 }).catch((err) =>{
