@@ -2,13 +2,18 @@ import express from 'express';
 import mongoose from 'mongoose';
 import userRouter from './routes/user.routes.js';
 import authRouter from './routes/auth.routes.js';
+import dotenv from 'dotenv';
 
-mongoose.connect("mongodb+srv://raveen:1234@cluster0.hy2vc2c.mongodb.net/?retryWrites=true&w=majority")
-.then(()=>{
-    console.log('Connected to MONGODB!');
-}).catch((err) =>{
+dotenv.config();
+
+mongoose
+  .connect(process.env.MONGO)
+  .then(() => {
+    console.log('Connected to MongoDB!');
+  })
+  .catch((err) => {
     console.log(err);
-})
+  });
 
 
 const app = express();
